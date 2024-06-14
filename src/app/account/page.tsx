@@ -2,6 +2,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import Logo from "@/../public/images/logo.png"
 
 
 
@@ -10,17 +12,18 @@ const Accent = () => {
     return (
         <div className="w-screen h-screen flex">
             {/* <div className="w-[70%] h-full bg-custom-gradient "> */}
-            
+
             <div
-        className="w-[70%] h-full relative"
-        style={{
-          backgroundImage: 'url(/images/background01.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'top',
-        }}
-      >
-        
-           {/* <div className="w-[70%] h-full relative overflow-hidden">
+                className="w-[70%] h-full relative"
+                style={{
+                    backgroundImage: 'url(/images/background01.jpg)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'top',
+                }}
+            >
+                <Image src={Logo} alt="NOT LOGO" width={60} className=" ml-5 mt-5 " />
+
+                {/* <div className="w-[70%] h-full relative overflow-hidden">
               <video
                     autoPlay
                     loop
@@ -31,12 +34,12 @@ const Accent = () => {
                     Your browser does not support the video tag.
                 </video> */}
             </div>
-            
+
             <div className=" w-[35%] h-full bg-white  absolute right-0 shadow-2xl flex justify-center py-20 ">
-                <Tabs defaultValue="signin" className="w-[400px] ">
-                    <div className="py-5">
+                <Tabs defaultValue="signin" className="w-[400px] flex flex-col gap-32">
+                    <div className="  ">
                         <TabsList className="bg-[#dbd7db] " >
-                            <TabsTrigger  value="signin">Sign In</TabsTrigger>
+                            <TabsTrigger value="signin">Sign In</TabsTrigger>
                             <TabsTrigger value="signup">Sign Up</TabsTrigger>
                         </TabsList>
                     </div>
